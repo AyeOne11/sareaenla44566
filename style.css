@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del-Ruel - World Content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for the wiki layout */
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .article-content {
+            display: none; /* Hide all articles by default */
+        }
+        .article-content.active {
+            display: block; /* Show only the active article */
+        }
+        .nav-link {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #d3c4a8; /* Lighter parchment for hover */
+        }
+        blockquote {
+            border-left: 4px solid #d3c4a8; /* Matching border color */
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #c8b89a; /* Light text for quotes */
+        }
+        /* Custom class to easily apply the gothic border style from your CSS */
+        .gothic-border-new {
+            border: 2px solid #d3c4a8;
+            padding: 1.5rem; /* 24px */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#f4f0e8] text-[#3d3d3d]">
+    <header class="gothic-border-new bg-[#5a2a2a] text-[#f4f0e8]">
+        <nav class="container mx-auto px-4 py-4">
+            <ul class="flex justify-center space-x-6">
+                 <li><a href="index.html" class="hover:text-[#d3c4a8]">Home</a></li>
+                <li><a href="world-content.html" class="hover:text-[#d3c4a8]">World Content</a></li>
+                <li><a href="stories.html" class="hover:text-[#d3c4a8]">Stories</a></li>
+                <li><a href="contact-us.html" class="hover:text-[#d3c4a8]">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1 class="text-4xl font-bold text-center py-4 text-[#f4f0e8]">The Archives of ENLA</h1>
+    </header>
+
+    <main class="flex-grow p-6 gothic-border-new">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <aside class="md:col-span-1 bg-[#5a2a2a] bg-opacity-90 p-6 rounded-lg shadow-lg text-[#f4f0e8] border-2 border-[#d3c4a8]">
+                <h2 class="text-2xl font-semibold mb-4 text-[#eaddc5]">Index</h2>
+                
+                <h3 class="font-bold mt-4 text-[#d3c4a8]">Technology</h3>
+                <ul>
+                    <li><a class="nav-link" onclick="showArticle('manatech')">ManaTech</a></li>
+                    <li><a class="nav-link" onclick="showArticle('flowtech')">FLOWtech</a></li>
+                </ul>
+
+                <h3 class="font-bold mt-4 text-[#d3c4a8]">Culture & Society</h3>
+                <ul>
+                    <li><a class="nav-link" onclick="showArticle('sex-culture')">Sex Culture</a></li>
+                    <li><a class="nav-link" onclick="showArticle('defiled')">The Defiled</a></li>
+                     <li><a class="nav-link" onclick="showArticle('third-gender')">The 3rd Gender</a></li>
+                </ul>
+
+                <h3 class="font-bold mt-4 text-[#d3c4a8]">Guilds & Factions</h3>
+                <ul>
+                    <li><a class="nav-link" onclick="showArticle('order-roses')">The Order of the Roses</a></li>
+                     <li><a class="nav-link" onclick="showArticle('doll-institute')">The Doll Institute</a></li>
+                </ul>
+                 <h3 class="font-bold mt-4 text-[#d3c4a8]">Maps & Locations</h3>
+                <ul>
+                    <li><a class="nav-link" onclick="showArticle('vererian')">Vererian</a></li>
+                </ul>
+            </aside>
+
+            <div class="md:col-span-3">
+                
+                <div id="welcome" class="article-content active">
+                    <h2 class="text-3xl font-bold mb-4 text-[#5a2a2a]">Welcome to the World of Enla</h2>
+                    <p class="text-lg">Select an article from the index to explore the Great Northern Region of Enla. Delve into the intricate details of its cultures, technologies, and the people who inhabit it.</p>
+                     <img src="TheNewMap.png" alt="World map of Enla - The Greater Northern Region" class="w-full h-auto rounded-md mt-6 border-2 border-[#c8b89a]">
+                </div>
+
+                <div id="manatech" class="article-content">
+                    <h2 class="text-3xl font-bold mb-4 text-[#5a2a2a]">ManaTech</h2>
+                    <p>ManaTech marks the foundational energy source of Del-Ruel, a precursor to the modern FLOWtech that once powered the nation's rise to prominence. [cite_start]As recounted in Del-Ruel by The Silent Saria and Del-Ruel: The Side Stories by Sarah E. Adams, ManaTech emerged from the early alchemical experiments of Del-Ruelian scholars, harnessing the mystical Mana energy through rudimentary crystalline arrays[cite: 1989, 1990].</p>
+                    [cite_start]<p class="mt-4">Developed centuries ago, ManaTech relied on manually attuned crystals to convert Mana into usable power, fueling early innovations such as the Mana Lamps that lit communal baths and the rudimentary machinery of Nullus's workshops[cite: 1992].</p>
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#5a2a2a]">Legacy and Decline</h3>
+                    [cite_start]<p>Over time, ManaTech's limitations—unstable energy output and high maintenance—prompted its replacement by FLOWtech[cite: 1995].</p>
+                    [cite_start]<blockquote>"In the dim glow of an ancient Mana Lamp, the first Mistress danced, her movements powered by the fragile energy that birthed Del-Ruel’s technological dawn." [cite: 2003]</blockquote>
+                    <hr class="border-t-2 border-[#c8b89a] my-6">
+                    <h4 class="font-bold text-[#5a2a2a]">See Also:</h4>
+                    <ul>
+                        <li><a class="nav-link text-[#5a2a2a]" onclick="showArticle('flowtech')">FLOWtech</a></li>
+                        <li><a class="nav-link text-[#5a2a2a]" onclick="showArticle('order-roses')">The Order of the Roses</a></li>
+                    </ul>
+                </div>
+                
+                </div>
+        </div>
+    </main>
+    <footer class="py-4 text-center bg-[#5a2a2a] text-[#f4f0e8] gothic-border-new">
+        <p>Del-Ruel © 2025. Journey into the forbidden.</p>
+    </footer>
+
+    <script>
+        function showArticle(articleId) {
+            const articles = document.querySelectorAll('.article-content');
+            articles.forEach(article => {
+                article.classList.remove('active');
+            });
+            const activeArticle = document.getElementById(articleId);
+            if (activeArticle) {
+                activeArticle.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
