@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del-Ruel - Stories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .book { ... } /* keep your existing gothic-border styles */
+        .reader-btn {
+            background: linear-gradient(to right, #2d3748, #4a5568);
+            color: #f7fafc;
+            padding: 12px 28px;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .reader-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px #a0aec0; }
+        .free-badge {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#f7fafc] text-[#1a202c]">
+
+<header class="bg-[#2d3748] text-[#f7fafc]" style="border: 2px solid #a0aec0; padding: 1.5rem;">
+    <nav class="container mx-auto px-4 py-4">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="index.html" class="hover:text-[#a0aec0]">Home</a></li>
+            <li><a href="world-content.html" class="hover:text-[#a0aec0]">World Content</a></li>
+            <li><a href="stories.html" class="hover:text-[#a0aec0]">Stories</a></li>
+            <li><a href="contact-us.html" class="hover:text-[#a0aec0]">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="flex-grow p-6">
+    <h1 class="text-4xl font-bold text-center py-4 text-[#2d3748]">Stories from Enla</h1>
+    <p class="text-center text-lg mb-8 max-w-2xl mx-auto">Step into the Archives of Enla. Read full novels in beautiful e-reader format — optimized for phones, tablets, Kindles, and desktops.</p>
+
+    <!-- Del-Ruel -->
+    <div class="book gothic-border flex flex-col md:flex-row gap-6">
+        <img src="images/TalesFromENLA1.png" alt="Del-Ruel cover" class="max-w-[200px] mx-auto md:mx-0">
+        <div class="flex-1">
+            <h2 class="text-2xl font-semibold">Del-Ruel</h2>
+            <p class="mt-2">Bored noblewomen seek forbidden thrills in the libertine south…</p>
+            <div class="mt-6 flex items-center gap-3">
+                <button onclick="window.location='del-ruel.html'" 
+                        class="reader-btn px-8 py-3">Read • Paid per chapter (coming soon)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Doll Institute -->
+    <div class="book gothic-border flex flex-col md:flex-row gap-6">
+        <img src="images/BookDollInArt2.png" alt="Doll Institute cover" class="max-w-[200px] mx-auto md:mx-0">
+        <div class="flex-1">
+            <h2 class="text-2xl font-semibold">Del-Ruel: The Side Stories – The Doll Institute</h2>
+            <p class="mt-2">Lee arrives in Nullus and discovers the secrets of living Dolls and Mana energy…</p>
+            <div class="mt-6 flex items-center gap-3">
+                <button onclick="window.location='doll-institute.html'" 
+                        class="reader-btn px-8 py-3">Read • Paid per chapter (coming soon)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- THE SPIRAL – FREE -->
+    <div class="book gothic-border flex flex-col md:flex-row gap-6 border-[#a0aec0] bg-gradient-to-br from-[#f7fafc] to-[#e2e8f0]">
+        <img src="images/Bookartwork.png" alt="The Spiral cover" class="max-w-[200px] mx-auto md:mx-0">
+        <div class="flex-1">
+            <span class="free-badge inline-block bg-green-600 text-white text-xs px-3 py-1 rounded-full mb-2">FREE TO READ</span>
+            <h2 class="text-2xl font-semibold">The Spiral</h2>
+            <p class="mt-2">Lyra’s innocent “miracle cure” becomes a descent into White Crystal addiction, black-market deals, and spiritual defilement in conservative Aloreria.</p>
+            <div class="mt-6">
+                <button onclick="window.open('spiral-reader.html', '_blank')" 
+                        class="reader-btn px-8 py-3 text-xl">Read The Spiral for Free • E-Reader Mode</button>
+                <p class="text-xs text-gray-500 mt-3">Full novel • 100% free • Optimized for any device</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="py-4 text-center bg-[#2d3748] text-[#f7fafc]" style="border: 2px solid #a0aec0; padding: 1.5rem;">
+    <p>Del-Ruel © 2025 • Journey into the forbidden.</p>
+</footer>
+</body>
+</html>
