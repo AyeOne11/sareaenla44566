@@ -8,83 +8,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Updated styles to match the new slate-gray theme */
-        body {
-            font-family: 'Playfair Display', serif;
+        .book { ... } /* keep your existing gothic-border styles */
+        .reader-btn {
+            background: linear-gradient(to right, #2d3748, #4a5568);
+            color: #f7fafc;
+            padding: 12px 28px;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s;
         }
-        h1, h2, h3, h4 {
-            font-family: 'Cinzel Decorative', cursive;
-        }
-        .gothic-border {
-            border: 2px solid #a0aec0; /* Medium gray border */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: rgba(255, 255, 255, 0.5); /* Slight white tint to lift it from the background */
-        }
-        .book img {
-            max-width: 200px;
-            float: left;
-            margin-right: 20px;
-            border: 1px solid #a0aec0;
-            border-radius: 4px;
-        }
-        .book::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .book a {
-            color: #2d3748; /* Dark slate-gray for links */
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .book a:hover {
-            color: #4a5568; /* Slightly lighter gray on hover */
+        .reader-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px #a0aec0; }
+        .free-badge {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-[#f7fafc] text-[#1a202c]">
-    <header class="bg-[#2d3748] text-[#f7fafc]" style="border: 2px solid #a0aec0; padding: 1.5rem;">
-        <nav class="container mx-auto px-4 py-4">
-            <ul class="flex justify-center space-x-6">
-                <li><a href="index.html" class="hover:text-[#a0aec0]">&nbsp;</a></li>
-                <li><a href="world-content.html" class="hover:text-[#a0aec0]">World Content</a></li>
-                <li><a href="stories.html" class="hover:text-[#a0aec0]">Stories</a></li>
-                <li><a href="contact-us.html" class="hover:text-[#a0aec0]">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+
+<header class="bg-[#2d3748] text-[#f7fafc]" style="border: 2px solid #a0aec0; padding: 1.5rem;">
+    <nav class="container mx-auto px-4 py-4">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="index.html" class="hover:text-[#a0aec0]">Home</a></li>
+            <li><a href="world-content.html" class="hover:text-[#a0aec0]">World Content</a></li>
+            <li><a href="stories.html" class="hover:text-[#a0aec0]">Stories</a></li>
+            <li><a href="contact-us.html" class="hover:text-[#a0aec0]">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
 
 <main class="flex-grow p-6">
-        <h1 class="text-4xl font-bold text-center py-4 text-[#2d3748]">Stories by Sarah E. Adams</h1>
-        
-  <div class="book gothic-border">
-            <img src="images/TalesFromENLA1.png" alt="Cover of Del-Ruel">
-            <h2 class="text-2xl font-semibold text-[#2d3748]">Del-Ruel</h2>
-          <p class="mt-2">Bored with their posh lives, three noble Alorerian women—Tessa, Elisa, and Marie—embark on an illicit adventure to Del-Ruel, a restricted nation shunned for its open sexual culture and thriving black-market trade.&nbsp; &nbsp;Seeking thrills before their academic futures at the Royal Academy begin, they immerse themselves in a world of debauchery, advanced technology, and unexpected self-discovery[cite: 523, 575]. Will they embrace this forbidden paradise or succumb to its dangers?</p>
-          <a href="del-ruel.html" class="mt-4 inline-block">Read Del-Ruel (Paid per read features coming soon)</a>
-        </div>
+    <h1 class="text-4xl font-bold text-center py-4 text-[#2d3748]">Stories from Enla</h1>
+    <p class="text-center text-lg mb-8 max-w-2xl mx-auto">Step into the Archives of Enla. Read full novels in beautiful e-reader format — optimized for phones, tablets, Kindles, and desktops.</p>
 
-  <div class="book gothic-border">
-            <img src="images/BookDollInArt2.png" alt="Cover of The Doll Institute">
-            <h2 class="text-2xl font-semibold text-[#2d3748]">Del-Ruel: The Side Stories - The Doll Institute</h2>
-            [cite_start]<p class="mt-2">In the bustling Grand City of Nullus, newcomer Lee arrives from a small western village, drawn by the allure of Del-Ruel's innovative FLOWtech billboards and vibrant society[cite: 113, 470]. [cite_start]As she navigates this symphony of indulgence, where sexuality fuels creativity and progress, Lee uncovers the secrets of The Doll Institute and the transformative power of Mana energy[cite: 113, 120]. This side story explores the undercurrents of a culture that celebrates open expression and technological marvels.</p>
-            <a href="doll-institute.html" class="mt-4 inline-block">Read The Doll Institute (Paid per read features coming soon)</a>
+    <!-- Del-Ruel -->
+    <div class="book gothic-border flex flex-col md:flex-row gap-6">
+        <img src="images/TalesFromENLA1.png" alt="Del-Ruel cover" class="max-w-[200px] mx-auto md:mx-0">
+        <div class="flex-1">
+            <h2 class="text-2xl font-semibold">Del-Ruel</h2>
+            <p class="mt-2">Bored noblewomen seek forbidden thrills in the libertine south…</p>
+            <div class="mt-6 flex items-center gap-3">
+                <button onclick="window.location='del-ruel.html'" 
+                        class="reader-btn px-8 py-3">Read • Paid per chapter (coming soon)</button>
+            </div>
         </div>
-        
-      <div class="book gothic-border">
-            <img src="images/Bookartwork.png" alt="Cover of The Spiral">
-        <h2 class="text-2xl font-semibold text-[#2d3748]">COMING SOON -     The Spiral</h2>
-          <p class="mt-2">Lyra's descent into addiction begins innocently after she is given a free sample of a new "miracle cure" for everyday woes. Unbeknownst to her, this product is finely ground White Crystal, a highly addictive and illicit substance smuggled from Del-Ruel&nbsp; .&nbsp; As her reliance grows, she spirals through black-market dealings, family neglect, and spiritual corruption, ultimately facing defilement and homelessness.</p>
-          <p class="mt-2">This cautionary tale delves into the destructive grip of substance abuse and the quest for redemption in a world of temptation.</p>
-            <p class="mt-4 font-bold">Coming soon: The Spiral by S. E. Adams</p>
-        </div>
-    </main>
+    </div>
 
-    <footer class="py-4 text-center bg-[#2d3748] text-[#f7fafc]" style="border: 2px solid #a0aec0; padding: 1.5rem;">
-        <p>Del-Ruel © 2025. Journey into the forbidden.</p>
-    </footer>
+    <!-- The Doll Institute -->
+    <div class="book gothic-border flex flex-col md:flex-row gap-6">
+        <img src="images/BookDollInArt2.png" alt="Doll Institute cover" class="max-w-[200px] mx-auto md:mx-0">
+        <div class="flex-1">
+            <h2 class="text-2xl font-semibold">Del-Ruel: The Side Stories – The Doll Institute</h2>
+            <p class="mt-2">Lee arrives in Nullus and discovers the secrets of living Dolls and Mana energy…</p>
+            <div class="mt-6 flex items-center gap-3">
+                <button onclick="window.location='doll-institute.html'" 
+                        class="reader-btn px-8 py-3">Read • Paid per chapter (coming soon)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- THE SPIRAL – FREE -->
+    <div class="book gothic-border flex flex-col md:flex-row gap-6 border-[#a0aec0] bg-gradient-to-br from-[#f7fafc] to-[#e2e8f0]">
+        <img src="images/Bookartwork.png" alt="The Spiral cover" class="max-w-[200px] mx-auto md:mx-0">
+        <div class="flex-1">
+            <span class="free-badge inline-block bg-green-600 text-white text-xs px-3 py-1 rounded-full mb-2">FREE TO READ</span>
+            <h2 class="text-2xl font-semibold">The Spiral</h2>
+            <p class="mt-2">Lyra’s innocent “miracle cure” becomes a descent into White Crystal addiction, black-market deals, and spiritual defilement in conservative Aloreria.</p>
+            <div class="mt-6">
+                <button onclick="window.open('spiral-reader.html', '_blank')" 
+                        class="reader-btn px-8 py-3 text-xl">Read The Spiral for Free • E-Reader Mode</button>
+                <p class="text-xs text-gray-500 mt-3">Full novel • 100% free • Optimized for any device</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="py-4 text-center bg-[#2d3748] text-[#f7fafc]" style="border: 2px solid #a0aec0; padding: 1.5rem;">
+    <p>Del-Ruel © 2025 • Journey into the forbidden.</p>
+</footer>
 </body>
 </html>
