@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enla World Content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for the wiki layout */
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .article-content {
+            display: none; /* Hide all articles by default */
+        }
+        .article-content.active {
+            display: block; /* Show only the active article */
+        }
+        .nav-link {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #a0aec0; /* Lighter gray for hover */
+        }
+        blockquote {
+            border-left: 4px solid #a0aec0; /* Matching border color */
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #718096; /* Medium gray for quotes */
+        }
+        .gothic-border-new {
+            border: 2px solid #a0aec0;
+            padding: 1.5rem; /* 24px */
+        }
+        .image-gallery {
+            float: right;
+            width: 220px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .image-gallery img {
+            border: 2px solid #a0aec0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            border: 1px solid #a0aec0;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #2d3748;
+            color: #f7fafc;
+        }
+    .w-48 {
+}
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#f7fafc] text-[#1a202c]">
+
+<header class="gothic-border-new bg-[#2d3748] text-[#f7fafc]">
+  <nav class="container mx-auto px-4 py-4">
+    <ul class="flex justify-center space-x-6">
+      <li><a href="index.html" class="hover:text-[#a0aec0]">&nbsp;</a></li>
+      <li><a href="stories.html" class="hover:text-[#a0aec0]">Stories</a></li>
+      <li><a href="contact-us.html" class="hover:text-[#a0aec0]">Contact Us</a></li>
+    </ul>
+  </nav>
+  <h1 class="text-4xl font-bold text-center py-4 text-[#f7fafc]">The Archives of ENLA</h1>
+</header>
+
+
+<main class="flex-grow p-6 gothic-border-new">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+           <aside class="md:col-span-1 bg-[#2d3748] bg-opacity-90 p-6 rounded-lg shadow-lg text-[#f7fafc] border-2 border-[#a0aec0]">
+    <h2 class="text-2xl font-semibold mb-4 text-[#e2e8f0]">Index</h2>
+
+    <h3 class="font-bold mt-6 text-[#a0aec0]">The World</h3>
+    <ul>
+        <li><a class="nav-link" onclick="showArticle('welcome')">Welcome to Enla</a></li>
+        <li><a class="nav-link" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link" onclick="showArticle('vererian')">Vererian</a></li>
+        <li><a class="nav-link" onclick="showArticle('del-ruel')">Del-Ruel</a></li>
+    </ul>
+
+    <h3 class="font-bold mt-6 text-[#a0aec0]">Faith & Society</h3>
+    <ul>
+        <li><a class="nav-link" onclick="showArticle('high-church')">High Church of the Sixx</a></li>
+        <li><a class="nav-link" onclick="showArticle('defiled')">The Defiled</a></li>
+        <li><a class="nav-link" onclick="showArticle('third-gender')">The Third Gender</a></li>
+    
+    </ul>
+
+    <h3 class="font-bold mt-6 text-[#a0aec0]">Geography & Landmarks</h3>
+    <ul>
+        <li><a class="nav-link" onclick="showArticle('the-sounds')">The Sounds</a></li>
+        <li><a class="nav-link" onclick="showArticle('silent-sea')">The Silent Sea</a></li>
+    </ul>
+
+<h3 class="font-bold mt-6 text-[#a0aec0]">Cities, Castles & Landmarks Content</h3>
+    <ul>
+         <li><a class="nav-link" onclick="showArticle('adamire')">Adamire</a></li>
+       
+    </ul>
+
+    <h3 class="font-bold mt-6 text-[#a0aec0]">Technology & Innovation</h3>
+    <ul>
+        <li><a class="nav-link" onclick="showArticle('manatech')">ManaTech</a></li>
+        <li><a class="nav-link" onclick="showArticle('flowtech')">FLOWtech</a></li>
+    </ul>
+
+    <h3 class="font-bold mt-6 text-[#a0aec0]">Guilds, Factions & Institutions</h3>
+    <ul>
+        <li><a class="nav-link" onclick="showArticle('order-roses')">The Order of the Roses</a></li>
+        <li><a class="nav-link" onclick="showArticle('doll-institute')">The Doll Institute</a></li>
+    </ul>
+
+    <h3 class="font-bold mt-6 text-[#a0aec0]">Products, Brands & Substances</h3>
+    <ul>
+        <li><a class="nav-link" onclick="showArticle('floratica')">Floratica</a></li>
+        <li><a class="nav-link" onclick="showArticle('jasmine&rose')">Jasmine & Rose</a></li>
+        
+    </ul>
+
+    <h3 class="font-bold mt-6 text-[#a0aec0]">History & Lore</h3>
+    <ul>
+        <li><a class="nav-link" onclick="showArticle('history-timeline')">Timeline of Enla</a></li>
+        <li><a class="nav-link" onclick="showArticle('the-hush')">The Hush</a></li>
+    </ul>
+
+    <!-- NEW CATEGORY -->
+    <h3 class="font-bold mt-6 text-[#a0aec0]">World Content</h3>
+    <ul>
+         <li><a class="nav-link" onclick="showArticle('adamire')">Adamire</a></li>
+        <li><a class="nav-link" onclick="showArticle('the-arcadian')">The Arcadian</a></li>
+        <li><a class="nav-link" onclick="showArticle('umbrajell')">Umbrajell</a></li>
+        <!-- Add future misc articles here (creatures, random facts, etc.) -->
+    </ul>
+</aside>
+<div class="md:col-span-3">
+
+<!-- Website Articles -->
+
+
+<!-- Welcome to the World of Enla -->
+
+<div id="welcome" class="article-content active">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">Welcome to the World of Enla</h2>
+
+    
+    <a href="="images/worldMap31.png" target="_blank" title="Click to enlarge full map">
+        <img src="images/worldMap31.png" alt="Map of Enla" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in"></a>
+
+    <p class="text-lg">Enla is a world of stark contrasts and fragile balance. In the north, two conservative kingdoms — <b>Aloreria</b> and <b>Vererian</b> — stand united under the rigid doctrines of the <b>High Church of the Sixx</b>, clinging to tradition, moral purity, and the memory of <b>The Hush</b>, the ancient cataclysm that nearly silenced all life. To the south lies <b>Del-Ruel</b>, a vibrant, libertine nation where creativity, sensuality, and technological innovation thrive through the power of Mana and its advanced successor, FLOWtech.</p>
+
+    <p class="mt-4">Divided by the treacherous maritime channel known as <b>The Sounds</b>, these realms represent opposing philosophies: the north’s emphasis on order, piety, and communal sacrifice versus the south’s celebration of personal freedom, artistic expression, and the belief that sexual and creative energy are one and the same. Yet both sides share a common fear — that imbalance could once again awaken the whispering darkness of The Hush.</p>
+
+    <p class="mt-4">This archive is your gateway into the living world of Enla. Explore the cultures, technologies, faiths, and forbidden pleasures that define its people. Delve into the histories of its nations, the secrets of its guilds, and the quiet dangers that still linger beneath the surface. The Archives of Enla are constantly growing — new articles and stories will be added as the world expands.</p>
+
+    <hr class="border-t-2 border-[#a0aec0] my-8">
+    <p class="text-xs text-center text-gray-500">The Archives of Enla — Journey into the forbidden.</p>
+</div>
+
+
+<!-- The Sounds -->
+<div id="the-sounds" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Sounds</h2>
+
+    <!-- Hero Image – smaller, centered, clickable -->
+    <a href="images/thesounds.jpg" target="_blank" title="Click to enlarge full image">
+        <img src="images/thesounds.jpg" alt="The sheer cliffs and stone pillars of The Sounds" 
+             class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <p class="mt-4">The Sounds is a wide channel of water that separates the continents of Vererian and Aloreria. This body of water serves as a major geographical and strategic boundary in the Great Northern Region. It connects eastward to the Southern Sea and is home to Aloreria's primary harbour, Port Cicila.</p>
+    <p>The depths of The Sounds are notoriously uncharted; not only due to its historically recorded depths but also because its dark, cold abysses are the exclusive natural habitat of the Umbrajell. This creature and the potent toxin that it produces make the channel a vital, contested resource for the surrounding nations.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Name and Origin</h3>
+    <p>The channel gets its name from a unique acoustic phenomenon. It is flanked by large, towering, sheer cliffs on both the Vererian and Alorerian sides. Gusts of winds funnel through this channel at high speeds, hitting the cliffs and countless sea caves in a way that produces a constant, low or high-pitched moaning whistle. During storms, this "singing" becomes a deafening roar that echoes for miles.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">History</h3>
+    <p>The first documented event of The Sounds dates back to the year 543 BC, when a treacherous hurricane ripped through the channel. The storm spanned for miles and affected both the Alorerian and Vererian coastlines. This cataclysmic event, documented as "The Roaring Tempest," is recorded within the chronicles of the High Church of the Sixx. Scribes of the era wrote that the channel's signature, high-pitched "singing" escalated into a "deafening roar that echoed for miles", a sound that was heard as far as the inlands.</p>
+    <p>The winds, funnelled between the towering, sheer cliffs of the two continents, reportedly shattered stone and inundated the sea caves. The storm brought destruction to anything within its path, leaving a path of shipwrecks and ruins in its wake. Splintered wood and twisted metal litter the channel bed as grim reminders of its fury.</p>
+    <p>The most famous shipwreck is the <b>Aura</b>, the largest known Alorerian luxury vessel that vanished during the storm. Decades later, treasure hunters around the world search for the remains — yet it has never been found.</p>
+    <p>The Sounds is also infamous as a harvesting ground for black-market smugglers. Legends among sailors tell of "The Purple Harvest," a perilous night-run into the abyss by Del-Ruelian ships seeking the Umbrajell toxin. This toxin is a key ingredient for the potent narcotic Requiem. These smugglers navigated the pitch-black depths by the eerie, bioluminescent glow of the Umbrajells' tentacles, which they described as looking down upon a "city of trapped stars". They risked not only the creatures themselves but also interception by Vererian or Alorerian patrols, as they dredged the deep, permanently purple-stained trenches for the valuable pods.</p>
+
+    <h3 class= <a href="images/As_a_concept_202.png" target="_blank" title="Click to enlarge full image">
+        <img src="images/As_a_concept_202.png" alt="Tall ships carefully navigating the treacherous pillars and cliffs of The Sounds" 
+             class="w-1/2 mx-auto h-auto rounded-md my-8 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+           
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">General Weather Conditions</h3>
+    <p>Windy, gusty winds, random squalls.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Economic and Cultural Significance</h3>
+    <p>Control of The Sounds is economically vital due to the Umbrajell toxin. The resource has starkly different applications depending on cultural values.</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Vererian & Aloreria:</b> Under the governance of the church, the harvested toxin is strictly regulated and only processed by licensed apothecaries. It is primarily used to create powerful medicines used to combat severe pain, but can also be synthesized into vibrant purple dyes.</li>
+        <li><b>Del-Ruel:</b> In Del-Ruel, the toxin is manufactured and consumed in the same way as most of the Greater Northern Region, with the exception that it is recognized as a powerful narcotic used in illicit drug trades. It is a key ingredient in the manufacturing of Requiem, a potent and dangerous drug.</li>
+    </ul>
+
+    <hr class="border-t-2 border-[#a0aec0] my-8">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('vererian')">Vererian</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('umbrajell')">Umbrajell</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('the-hush')">The Hush</a></li>
+    </ul>
+</div>
+
+
+
+
+<!-- The Hush -->
+<div id="the-hush" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Hush</h2>
+
+    <!-- Hero Image – smaller, centered, clickable -->
+    <a href="images/the-hush.jpg" target="_blank" title="Click to enlarge full image">
+        <img src="images/the-hush.jpg" alt="The Hush – divine curse frozen over half of Enla" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <p class="mt-4">The Hush is not merely a region — it is a catastrophic divine curse unleashed by the angry gods upon Enla. It envelops vast swathes of the continent in an eternal, frozen silence and stasis, locking half the world in time.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">A World Frozen in Stillness</h3>
+    <p>Vast forests, towering mountains, and winding coastlines lie locked in an uncanny, perfect stillness. Birds hang motionless mid-flight, rivers are suspended mid-flow, and people are trapped forever in the middle of everyday actions — their faces frozen in expressions of ordinary daily life. No sound can escape The Hush. Even the wind dies at its border. Once all life within is claimed, a thick, impenetrable fog slowly grows and consumes the land.</p>
+
+    <!-- Dense fog image – centered -->
+    <a href="images/densefogCreeping.jpg" target="_blank" title="Click to enlarge full image">
+        <img src="images/densefogCreeping.jpg" alt="Dense fog of The Hush creeping across the coast" class="w-1/2 mx-auto h-auto rounded-md my-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+    <p class="text-xs italic text-gray-500 text-center mb-6">The dense, unnatural fog that slowly consumes everything within The Hush</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Effects of The Hush</h3>
+    <p>Anything or anyone that crosses the border is gradually frozen — unaging, unyielding, and utterly silent. There is no escape, no sound, and no passage of time. While the cursed remain eternally preserved in their final moment, the world outside continues to move, evolve, and forget them.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Shifting Border</h3>
+    <p>The boundary of The Hush is unstable and shifts unpredictably, sometimes claiming new land without warning. The High Church of the Sixx teaches that these movements are signs of the gods’ lingering wrath — a constant reminder of humanity’s past sins.</p>
+
+    <!-- Symbolic Church image – floating right -->
+    <a href="images/symbolicChurch.jpg" target="_blank" title="Click to enlarge full image">
+        <img src="images/symbolicChurch.jpg" alt="High Church priest at the border of The Hush" class="float-right w-64 ml-6 mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Religious and Cultural Significance</h3>
+    <p>To the northern nations, particularly Vererian and Aloreria, The Hush is both a sacred scar and a powerful moral warning. The High Church uses it as divine proof that moral decay and southern indulgence could awaken the gods’ fury once more. In contrast, southern nations like Del-Ruel view The Hush with a mixture of fear and scholarly curiosity, studying its edges for clues about Mana and the nature of time itself.</p>
+
+    <p>The Hush remains the greatest fracture in Enla — a physical, cultural, and spiritual divide that continues to shape politics, faith, myths, and the daily lives of those who live near its ever-changing border.</p>
+
+    <hr class="border-t-2 border-[#a0aec0] my-8">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">The High Church of the Sixx</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('vererian')">Vererian</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('del-ruel')">Del-Ruel</a></li>
+    </ul>
+</div>
+
+
+<!-- Adamire -->
+<div id="adamire" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">City of Adamire: The Intellectual Citadel of Aloreria</h2>
+
+    <!-- Top Banner Image (adamire.png) -->
+    <a href="images/adamire.png" target="_blank" title="Click to enlarge full image">
+        <img src="images/adamire.png" alt="The city of Adamire at dusk, the intellectual citadel of Aloreria" 
+             class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <h3 class="text-2xl font-semibold mt-2 mb-3 text-[#2d3748]">Introduction</h3>
+    <p>Nestled in the northeastern highlands of Aloreria, Adamire stands as a beacon of knowledge and discipline, far removed from the southern threats of The Hush. This prestigious city is home to the Royal Academy of Wynn, a revered institution celebrated across the continent for its advanced studies in humanities, culture, and sciences, as briefly noted in the main manuscript of Del-Ruel. Alongside its academic prowess, Adamire serves as the headquarters for The Royal Alorerian Border Patrol Academy and The Grand Watchtower of The Divine Sixx, blending intellectual pursuit with military vigilance and religious devotion. Surrounded by rolling hills, clear rivers, and misty valleys, Adamire embodies Aloreria's opulent conservatism, tempered by the High Church's influence and the subtle decay of royal neglect.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Geography and Atmosphere</h3>
+    <p>Perched atop a plateau overlooking a winding river that carves through lush woodlands, Adamire enjoys a temperate climate with crisp breezes and occasional mists that enhance its mystical allure. The city’s elevated position offers panoramic views of the Silent Sea to the east and Mount Raan to the south, providing a strategic yet serene setting. The landscape is dotted with ancient oaks and terraced gardens, though some areas show signs of overgrowth and neglect, reflecting the economic strain from King Elif-Laurie’s greed.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Cultural Essence</h3>
+    <p>Adamire’s culture is a fusion of scholarly rigor, pious restraint, and military discipline, deeply influenced by the High Church of the Sixx. The city’s inhabitants, from elite academics to border trainees, adhere to Alorerian opulent conservatism in fashion—high-necked robes and dresses crafted from embroidered silks, designed to display wealth while enforcing modesty. This "gilded bars" style, with its delicate floral embellishments, contrasts with the more libertine aesthetics of Del-Ruel, earning it a "frumpy" reputation among outsiders. Annual Wynn Vigil Festivals celebrate intellectual achievements and border preparedness with modest processions and herbal feasts, though underground circles whisper of reform inspired by the missing Queen Rhys-Roberts’ scholarly ties.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Key Institutions</h3>
+    <p><strong>The Royal Academy of Wynn:</strong> This marble-spired citadel is the heart of Adamire, offering elite education in philosophy, history, literature, arts, folklore, linguistics, medicine, botany, and astronomy—restricted to manual methods per Church edicts. Its Great Hall, adorned with Sixx murals and gem-inlaid desks, hosts vibrant debates, while the Forbidden Archives guard censored mana lore, hinting at forbidden knowledge sought by Del-Ruel protagonists.</p>
+    <p><strong>The Royal Alorerian Border Patrol Academy:</strong> Located on the city’s outskirts, this fortified complex trains southern patrol units with archery ranges and strategy halls. Opulent officer quarters contrast with weathered trainee dorms, symbolizing the city’s dual nature.</p>
+    <p><strong>The Grand Watchtower of The Divine Sixx:</strong> A towering structure with a gold-leafed observatory dome, it serves as a spiritual and surveillance hub, its runes-etched walls offering distant oversight of Aloreria’s borders. Pilgrims ascend for divine vistas, though its outer steps show cracks from underfunding.</p>
+
+    <!-- Second image (the collage) – centered in the middle of the page -->
+    <a href="images/Here_are_4.png" target="_blank" title="Click to enlarge full image">
+        <img src="images/Here_are_4.png" alt="Multiple views of Adamire and its key institutions" 
+             class="w-1/2 mx-auto h-auto rounded-md my-8 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Economy and Society</h3>
+    <p>Adamire’s economy thrives on education, military training, and Church pilgrimage, with noble tuitions, manuscript sales, and patrol subsidies driving wealth. Highland farms yield fruits, grains, and herbs, traded to Bisk and ports, while artisans craft literature bindings and patrol gear. However, royal siphoning of funds leads to delayed salaries and decaying infrastructure, fostering resentment among commoners and trainees alike.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Landmarks and Decay</h3>
+    <p>The city’s opulent core—marble spires, oak courtyards, and gold-accented towers—contrasts with outer districts where cracked walls, weathered targets, and overgrown gardens reveal neglect. The river, once pristine, bears subtle pollution from upstream farms, a silent testament to the kingdom’s faltering stewardship.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Living City</h3>
+    <p>Adamire buzzes with the sounds of quill scratches, patrol drills, and Watchtower hymns, its air scented with ink and pine. Scholars in silk robes pass laborers in patched attire, fueling tensions that simmer beneath the surface. Whispers of rebellion against the king’s avarice grow, with the queen’s legacy as a catalyst for change, making Adamire a city of both enlightenment and unrest.</p>
+
+    <hr class="border-t-2 border-[#a0aec0] my-8">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">The High Church of the Sixx</a></li>
+    </ul>
+</div>
+
+
+
+<!-- The Silent Sea -->
+<div id="silent-sea" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Silent Sea</h2>
+
+    <!-- Hero Image 1 – smaller, centered, clickable -->
+    <a href="images/silent-sea-sketch.jpg" target="_blank" title="Click to enlarge full image">
+        <img src="images/silent-sea-sketch.jpg" alt="The Silent Sea – vast stagnant waters under thick fog" 
+             class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <h3 class="text-2xl font-semibold mt-2 mb-3 text-[#2d3748]">Overview</h3>
+    <p>The Silent Sea is a vast, stagnant body of water located in the Greater Northern Region, situated between the eastern coast of Aloreria and the landmass known as The Wonders. This treacherous sea is a direct and lingering consequence of <b>The Hush</b>, the silencing fog unleashed by the Gods as divine retribution.</p>
+    <p>Its eerie stillness, perpetual dense fog, and hazardous conditions make it a place of dread and a powerful symbol of the gods’ lingering curse. Characterized by its complete lack of wind and currents, the Silent Sea is currently the largest body of unmoving water in the region. However, there have been reports of similar environmental changes beginning to happen in the south-eastern region of the Southern Sea.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Geographical and Environmental Characteristics</h3>
+    <p>The defining feature of the Silent Sea is its profound stillness. Heavily affected by the encroaching power of The Hush before the curse was halted, the region is devoid of any wind, leaving the water’s surface unnervingly placid. The climate is oppressively warm and humid, and a thick, disorienting fog almost always blankets the water, making navigation exceptionally dangerous.</p>
+    <p>The constant decay of its unique ecosystem, combined with the heat, produces an extremely foul and pervasive odor that hangs heavy in the air. Due to these treacherous conditions and the overwhelming stench, most travelers avoid the region entirely.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Travel Across the Silent Sea</h3>
+    <p>Travel across this sea is a monumental undertaking. With no winds to power sails, vessels must be manually rowed, turning any voyage into an arduous and lengthy journey. This primitive mode of travel stands in stark contrast to the advanced FLOWtech-powered ships used in nations like Del-Ruel.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">A Unique and Deadly Ecosystem</h3>
+    <p>The sea’s deep, stagnant waters have cultivated a bizarre and lethal ecosystem. The lack of movement and warm temperatures create a cycle of rapid growth and decay for its diverse lifeforms. This process has two significant consequences:</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Giant Leeches:</b> The waters are infested with monstrous leeches that can reportedly grow up to 20 feet in length. These creatures are a primary threat to any who dare to cross the sea, capable of attacking small rowing boats.</li>
+        <li><b>Mold Islands:</b> The constant decay of organic matter has led to the formation of immense mold colonies on the water’s surface. Some of these growths are so large and dense that they form small, unstable islands, contributing to the sea’s hazardous and alien landscape.</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Historical and Cultural Significance</h3>
+    
+    <!-- Image 3 – floating right (Renaissance sketch) -->
+    <a href="images/silent-sea-hero.jpg" target="_blank" title="Click to enlarge full image">
+        <img src="images/silent-sea-hero.jpg" alt="Abandoned Alorerian harbor overtaken by fog and mold" 
+             class="float-right w-64 ml-6 mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <p>For the devout followers of the High Church of the Sixx in Aloreria and Vererian, the Silent Sea serves as a terrifying and sacred reminder of what happens when faith is lost. It is seen as a cursed, forbidden zone — a wound upon the world that has not healed since the end of The Hush.</p>
+    <p>The sea’s foulness has had a direct and devastating impact on the eastern coast of Aloreria. In the years following the halt of The Hush, the stench from the stagnant waters grew progressively worse, forcing the abandonment of numerous harbor and port towns. Villagers complained that the pervasive odor made them physically ill, turning once-thriving coastal communities into desolate ghost towns that now rot on the edge of the silent, stinking waters.</p>
+
+    <blockquote>“The oars dipped into the black water, the only sound in a world silenced by gods. The air is poison here. Mold grows like new land, and the leeches are the true leviathans of the deep.”</blockquote>
+
+    <hr class="border-t-2 border-[#a0aec0] my-8">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('the-hush')">The Hush</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">The High Church of the Sixx</a></li>
+    </ul>
+</div>
+
+
+<!-- Umbrajell -->
+
+<div id="umbrajell" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Umbrajell</h2>
+
+    <!-- Hero Image (the beautiful purple jellyfish from your PDF) -->
+    <img src="images/umbrajell.jpg" alt="An Umbrajell glowing in the lightless depths of The Sounds, with harvesting cage visible" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0]">
+
+    <p>The Umbrajell is a unique and formidable deep-sea creature native to the lightless depths of <b>The Sounds</b>. These jellyfish-like organisms are primarily known for the potent chemical compounds produced within their anatomy, which have become a cornerstone of various industries across Enla.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Biology and Appearance</h3>
+    <p>The Umbrajell is distinguished by its massive scale and specialized defense mechanisms:</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Structure:</b> They closely resemble common jellyfish but have adapted to the crushing pressures of the channel’s depths.</li>
+        <li><b>Tentacles:</b> The creature possesses long, ink-black tentacles that can reach lengths of 30 to 40 feet.</li>
+        <li><b>Toxin Pods:</b> Scattered along the length of these tentacles are specialized pods that produce a thick, purplish toxin.</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Harvesting and Utility</h3>
+    <p>The purplish toxin is a highly sought-after resource, though harvesting it from the turbulent, pillar-filled waters of The Sounds is exceptionally dangerous.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Harvest Process</h3>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Capture Method:</b> Large cages are lowered into the depths of the channel using miles worth of heavy chains.</li>
+        <li><b>Retrieval:</b> Fishermen must pull up these massive lengths of chain to retrieve the cages once an Umbrajell has been ensnared.</li>
+        <li><b>Primary Trade Hubs:</b>
+            <ul class="list-disc ml-8 mt-1">
+                <li><b>Port Mishii (Vererian):</b> Serves as the primary southern hub for the Umbrajell trade.</li>
+                <li><b>Port Cicla (Aloreria):</b> The major northern trade point, known for its busy docks and history of naval skirmishes.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Regional Applications</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Region/Organization</th>
+                <th>Primary Use</th>
+                <th>Application</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vererian &amp; Aloreria</td>
+                <td>Industrial Dyes</td>
+                <td>Creating rich, permanent purple pigments for high-status textiles.</td>
+            </tr>
+            <tr>
+                <td>High Church of the Sixx</td>
+                <td>Holy Medicine</td>
+                <td>Church alchemists refine the toxin into potent analgesics used exclusively for severe illnesses and extreme pain.</td>
+            </tr>
+            <tr>
+                <td>Del-Ruel</td>
+                <td>Narcotic Synthesis</td>
+                <td>Heavily utilized to synthesize the illicit and highly addictive drug <b>Requiem</b>.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Cultural and Economic Impact</h3>
+    <p>While the northern nations of Aloreria and Vererian treat the toxin as a strictly regulated medicinal and industrial resource, Del-Ruel’s reliance on the Umbrajell for the production of <b>Requiem</b> creates a high-demand black market.</p>
+    <p>Smugglers and “The Aristocrats” often brave the choppy conditions of The Sounds to transport raw toxin or harvested pods to southern laboratories. This activity frequently draws the attention of the <b>Tribunal of the Sixx</b>, which views the narcotic use of the Umbrajell’s essence as a pathway to spiritual corruption that could invite the return of <b>The Hush</b>.</p>
+
+    <blockquote>“When the wind of The Sounds catches the rhythmic clanking of the miles of iron, it adds a metallic discord to the channel’s haunting melodies.”</blockquote>
+
+    <p class="text-xs italic text-gray-500 mt-2">— Nautical Note from harvesting crews</p>
+
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('the-sounds')">The Sounds</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('silent-sea')">The Silent Sea</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('narcotics')">Narcotics &amp; Forbidden Substances</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">The High Church of the Sixx</a></li>
+    </ul>
+</div>
+
+
+
+
+
+<!-- The Third Gender -->
+<div id="third-gender" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Third Gender</h2>
+
+    <!-- New hero image at the top (the line-drawing symbol that was previously lower) -->
+    <a href="images/d635d789a5474ecfd11a1147c2431312.png" target="_blank" title="Click to enlarge full image">
+        <img src="images/d635d789a5474ecfd11a1147c2431312.png" alt="The symbolic journey of the Third Gender" 
+             class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <p>The 3rd Gender stands as a unique and revered identity exclusive to Del-Ruel, a testament to the nation’s progressive embrace of gender fluidity within its libertine culture. As illuminated in <i>Del-Ruel</i> by The Silent Saria and <i>Del-Ruel: The Side Stories</i> by Sarah E. Adams, this recognition reflects Del-Ruel’s belief that transcending traditional gender binaries enhances personal creativity and societal harmony.</p>
+
+    <p>To be acknowledged as a 3rd Gender, an individual must reach the age of 18 and have lived fully as the opposite gender for at least two complete years — a process deeply tied to the nation’s rituals and Mana-infused traditions.</p>
+
+    <!-- Marble banner image now moved to center-right -->
+    <a href="images/thirdGender190.jpg" target="_blank" title="Click to enlarge full image">
+        <img src="images/thirdGender190.jpg" alt="The Third Gender" 
+             class="float-right w-64 ml-6 mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Journey to the 3rd Gender</h3>
+    <p>The journey requires a deliberate and transformative embrace of both masculine and feminine energies in equal measure. This path begins with a transition from one gender to another, often spanning several years, guided by cultural mentors and enhanced by sensory experiences like Daze vapor during the Rite of Awakening. This dual transition — first to the opposite gender, then into the 3rd Gender — symbolizes a holistic integration of identity, aligning with Del-Ruel’s philosophy that such balance fuels innovation, as seen in its Mana and FLOWtech advancements.</p>
+
+    <p>Formal recognition as a 3rd Gender hinges on meeting stringent federal Del-Ruelian standards, which include completing several surgeries to harmonize physical form with this new identity. A 3rd Gender individual must embody both feminine and masculine traits without bias, transcending the need to favor one over the other. Most view themselves as having surpassed traditional genders, existing simply as themselves — a state of being celebrated in Nullus’s theaters and guildhouses.</p>
+
+    <p>Upon this recognition, Del-Ruelians who identified as 3rd Gender officially relinquish their Dual-Gendered Names, adopting a singular name of their choosing to mark their completed transformation.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Cultural Practices and Rituals</h3>
+    <p>The transition process involves communal support, with ceremonies like the Gender Bloom Rite, where Mana crystals illuminate the final naming, marking the individual’s new identity. Training in balancing energies begins early, supported by the monarchy, ensuring a society where the 3rd Gender thrives as a symbol of resilience and creativity.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Societal Role and Challenges</h3>
+    <p>The 3rd Gender plays a vital role in Del-Ruel’s cultural fabric, often serving as mediators or artists who bridge societal divides. However, this identity faces scorn from conservative neighbors like Vererian, complicating trade, while internal debates focus on the physical and emotional toll of surgeries, balanced by the use of Requiem in rare ritual contexts to ease the transition.</p>
+
+    <blockquote>“The Sixx made two pillars. The Veilborn are the space between them where the light dances.” — Madam Marionette-Louie, founder of the Doll Institute</blockquote>
+
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">The High Church of the Sixx</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('doll-institute')">The Doll Institute</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('del-ruel')">Del-Ruel</a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+<!-- The Defiled Article -->
+
+<div id="defiled" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Defiled</h2>
+
+    <!-- Top Hero Image – now smaller & centered like the Church emblem -->
+    <img src="images/defiled-slums.jpg" alt="A newly Defiled woman marked and alone in the alleys of Bisk" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0]">
+
+    <p>The Defiled are those marked by the <b>High Church of the Sixx</b> as spiritually corrupted and permanently severed from divine grace. Once ordinary citizens of Aloreria or Vererian, they are excommunicated for grave violations of the Sixx’s sacred balance—most often through chronic indulgence in Del-Ruelian vices or forbidden substances. They become living warnings, embodiments of the moral decay that once invited <b>The Hush</b> upon Enla.</p>
+
+    <p class="mt-4">To be Defiled is a fate worse than death: a social and spiritual death sentence. Families are required to cast them out. Their names are struck from temple rolls. The Church brands them as "Defiled.”</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">How One Becomes Defiled</h3>
+    <p>The Tribunal of the Sixx investigates any deviation from doctrine. Common paths to defilement include chronic use of proscribed substances (Daze, Requiem, White Crystal, etc.) or illicit contact with the south.</p>
+
+    <!-- Forehead Mark Sketch – floating right (unchanged) -->
+    <img src="images/defiled-mark-sketch.jpg" alt="Concept sketch of the Mark of the Defiled – crude X brand burned on the forehead" class="float-right w-48 ml-6 mb-4 border-2 border-[#a0aec0]">
+
+    <p>In the cautionary tale <i>The Spiral: The Poisoned Escape</i>, Lyra of Bisk is a typical case. After addiction to “Bliss” (White Crystal laced with Requiem) destroys her life, her husband reports her. She is cast out and branded on the forehead with the Mark of the Defiled — a permanent, crude X burned by the Tribunal.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Mark of the Defiled</h3>
+    <p>The brand is a hot-iron X formed from a fractured sword (Drakon) crossed with a cracked scale (Vesper), with Lirana’s hearth flame at the center — deliberately snuffed and veined with purple crystal haze. It is placed on the forehead so it can never be hidden. It declares to the world: this soul is silenced and unable to return to the divine upon their death.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Societal Treatment & Daily Realities</h3>
+    <p>Once marked, a Defiled person loses every protection:</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Family & Community:</b> Immediate expulsion. Children are taught to regard the parent as spiritually dead.</li>
+        <li><b>Employment & Housing:</b> No one may shelter or hire them.</li>
+        <li><b>Legal Status:</b> In Vererian they may face ritual throat-binding; in Aloreria they are driven toward the southern border.</li>
+    </ul>
+
+    <!-- Bottom Image – now smaller & centered like the Church emblem -->
+    <img src="images/defiled-casting-out.jpg" alt="The Casting Out – a family expels their Defiled wife under Church decree" class="w-1/2 mx-auto h-auto rounded-md my-8 border-2 border-[#a0aec0]">
+
+    <blockquote>“She is no longer one of us. Her voice is silenced, her soul already half-claimed by the fog.” — High Pontiff Valeriax Argon Tricamus</blockquote>
+
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">The High Church of the Sixx</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('vererian')">Vererian</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('narcotics')">Narcotics &amp; Forbidden Substances</a></li>
+        <li><a class="nav-link text-[#2d3748]" href="stories.html">The Spiral: The Poisoned Escape (story)</a></li>
+    </ul>
+</div>
+
+
+
+<!-- High Church of the Six Article -->
+
+<div id="high-church" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The High Church of the Sixx</h2>
+    
+    
+        <img src="images/SixEmblem2.jpg" alt="High Church Emblem" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0]">
+        <p class="text-xs italic text-gray-500 text-center">The preeminent religious authority of ENLA.</p>
+    
+
+    <p>The High Church of the Sixx stands as the supreme governing authority and preeminent religious organization across ENLA, most notably within the <b>Great Northern Region</b>. As the de facto government of <b>Vererian</b>, it commands unwavering devotion and credits its structured societal order with repelling the encroaching threat of <b>The Hush</b>.</p>
+
+    <p class="mt-4">Rooted in a hybrid of ancient ascetic traditions reminiscent of disciplined faiths, the High Church of the Sixx enforces strict gender roles and moral values, emphasizing purity, familial duty, and communal sacrifice. Men are often positioned as guardians and providers, while women embody nurturing and spiritual preservation, all under the vigilant eye of the clergy. This rigid framework contrasts sharply with the hedonistic excesses of Del-Ruelian culture, positioning the Church as a bulwark against moral decay. Devotees engage in daily rituals of prayer and service, viewing their roles—from humble acolytes to knightly defenders—as divinely ordained paths to enlightenment. The Church's doctrines promote abstinence from sensory indulgences, decrying substances like Daze and the open sexuality of southern cultures as pathways to spiritual corruption</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Sixx Pantheon</h3>
+    <p>The faith revolves around six divine entities representing the pillars of existence:</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Auriel the Illuminator:</b> Wisdom and light.</li>
+        <li><b>Thorne the Unyielding:</b> Strength and order.</li>
+        <li><b>Lirana the Pure:</b> Family and purity.</li>
+        <li><b>Vesper the Just:</b> Law and justice.</li>
+        <li><b>Elowen the Bountiful:</b> Nature and harvest.</li>
+        <li><b>Drakon the Protector:</b> War and defense.</li>
+    </ul>
+<br>
+
+<p>  These deities are invoked through the Church's teachings assert that balance among the Sixx ensures prosperity, while imbalance invites calamities like The Hush, a historical cataclysm described as a whispering darkness that silences thought and life, repelled through collective prayer and martial vigilance centuries ago.</p>
+
+<h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Foundations And Orgins</h3>
+<p>Established over a millennium ago in the shadowed halls of Vererian's ancient citadels, the High Church of the Sixx arose from a coalition of seers and warriors who united against The Hush's initial incursions. Historical accounts depict the founding as a divine revelation to the first High Pontiff, where the Sixx manifested in visions to bestow the sacred doctrines. In Vererian, the Church swiftly integrated with the royal family, assuming primary governmental duties such as lawmaking and taxation, while Aloreria's monarchy adopted it as a spiritual advisor, embedding its principles into noble education and courtly life. This expansion solidified the Church's role in repelling The Hush, transforming border skirmishes into holy crusades that defined the Great Northern Region's resilient identity.</p>
+    
+<h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Hierarchy and Orders</h3>
+    <p>At the apex stands the <b>High Pontiff</b>, elected for life to embody Thorne’s unyielding strength. The Church extends its reach through specialized orders:</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>The Sixx of Knights:</b> A male martial order patrolling borders against heretical incursions.</li>
+        <li><b>The Lirana Sisters:</b> A female monastic group managing sanctuaries for moral education and orphan care.</li>
+        <li><b>Auriel Scribes:</b> Scholars dedicated to preserving doctrine and investigating heresy.</li>
+    </ul>
+ <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Role Across ENLA Regions</h3>
+<p>The Church's influence varies by region, reflecting ENLA's diverse cultural landscape. In Vererian, it serves as the supreme authority, with House Verathor executing policies under its guidance. In Aloreria, it reigns as the #1 religion, deeply embedded in society—noble families like those of Tessa, Elisa, and Marie (as depicted in the narratives) uphold its conservative values, shunning southern indulgences and viewing substances like Daze as taboo. The Church maintains jurisdictions in select areas, such as border enclaves and missionary outposts, where it enforces moral codes and provides welfare. In Del-Ruel, its presence is visible but greatly diminished; only about one-third of the population attends services, often in rural or historical sites where remnants of northern influence persist amid the nation's libertine ethos. This reduced role stems from Del-Ruel's cultural resistance, though the Church occasionally launches covert efforts to reclaim devotees and combat "corrupting" elements like the sex trade and narcotics</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Handling Heresy</h3>
+    <p>The <b>Tribunal of the Sixx</b> investigates deviations from the faith’s balance. Travel to Del-Ruel is viewed as a grave offense. Tiered punishments include:</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Public Penance:</b> Ritual flogging or forced labor for first-time violators.</li>
+        <li><b>Excommunication:</b> Marking offenders as "Silenced," invoking social ostracism.</li>
+        <li><b>Capital Punishment:</b> In severe Vererian jurisdictions, ritual execution via throat-binding is imposed to maintain divine order[cite: 202, 477].</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Proscribed Substances</h3>
+    <p>The Church maintains a list of forbidden narcotics viewed as tools of sensory corruption:</p>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>Daze:</b> Euphoric vapor inducing inhibition loss.</li>
+        <li><b>Requiem:</b> Potent enhancer risking addiction and mutation.</li>
+        <li><b>White Crystal:</b> Substance that amplifies urges to addictive levels.</li>
+        <li><b>Purple Flower:</b> A hallucinogenic base for vapors.</li>
+    </ul>
+
+
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('vererian')">Vererian</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('defiled')">The Defiled</a></li>
+    </ul>
+</div>
+                
+              
+
+                <div id="manatech" class="article-content">
+                    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">ManaTech</h2>
+                    <p>ManaTech marks the foundational energy source of Del-Ruel, a precursor to the modern FLOWtech that once powered the nation's rise to prominence. As recounted in Del-Ruel by The Silent Saria and Del-Ruel: The Side Stories by Sarah E. Adams, ManaTech emerged from the early alchemical experiments of Del-Ruelian scholars, harnessing the mystical Mana energy through rudimentary crystalline arrays.</p>
+                    <p class="mt-4">Developed centuries ago, ManaTech relied on manually attuned crystals to convert Mana into usable power, fueling early innovations such as the Mana Lamps that lit communal baths and the rudimentary machinery of Nullus's workshops. Its use was often paired with sensory-enhancing substances like Daze, embedding technology into the nation's hedonistic rituals.</p>
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Legacy and Decline</h3>
+                    <p>Over time, ManaTech's limitations—unstable energy output and high maintenance—prompted its replacement by FLOWtech. Yet, remnants of ManaTech persist in rural areas and historical sites, serving as a nostalgic link to Del-Ruel's past.</p>
+                    <blockquote>"In the dim glow of an ancient Mana Lamp, the first Mistress danced, her movements powered by the fragile energy that birthed Del-Ruel's technological dawn." </blockquote>
+                    <hr class="border-t-2 border-[#a0aec0] my-6">
+                    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+                    <ul>
+                        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('flowtech')">&nbsp;</a></li>
+                        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('order-roses')">The Order of the Roses</a></li>
+                    </ul>
+                </div>
+
+
+
+
+<!-- The Doll Institute Article -->
+
+                <div id="doll-institute" class="article-content">
+                    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Doll Institute</h2>
+                  <p>&nbsp;</p>
+                    <img src="images/TDIBanner1.png" width="1408" height="768" alt=""/>
+<div class="image-gallery"> </div>
+
+                    <blockquote>"Dolls are simply humans who want to be cared for..." - Master Yuri</blockquote>
+
+                    <p class="mt-4">Founded in 1902 AC by Madam Marionette-Louie , The Doll Institute&nbsp; marks a pioneering venture in Del-Ruel’s sex trade industry, standing as the first human rental organization of its kind.&nbsp;</p>
+                    <p class="mt-4">Nestled within the vibrant streets of Nullus, this small yet growing organization transforms willing participants into living dolls. The institute’s mission blends care, artistry, and contractual discipline, setting it apart from the repressive norms of Vererian or Alorerian cultures.&nbsp;</p>
+<p class="mt-4">The Doll Institute thrives as a cultural and economic entity, supported by guilds like the Order of the Roses. Dolls, when not licensed, engage in training or perform in theaters, honing skills in dance and seduction of ornate, well-lit halls, often enhanced by substances like Purple Flower and Daze. This dual role—care recipient and performer—cements their place in Del-Ruel’s social fabric, though it invites criticism from conservative neighbors who view the practice as criminal and exploitative. </p>
+<h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">What is a Doll?</h3>
+                    
+                    <p>A doll is a human who voluntarily enters The Doll Institute, transforming training in poise, voice, and emotional expression. Dolls serve as companions and performers, licensed to owners for mutual care while captivating audiences in theatrical settings. They embody a living art form, designed to evoke care and desire, with gender-fluid identities reflecting Del-Ruel’s progressive norms. Their creation is a collaborative process with institutional guidance.</p>
+                  <p>&nbsp;</p>
+                  <p>The allure of becoming a doll lies in the promise of constant love and care, freeing individuals from the burdens of survival. A doll never needs to worry about its next meal or shelter, as its well-being is ensured through a unique licensing system. Owners do not fully own a doll; instead, they are granted a license, bound by strict contracts outlining daily care requirements. Failure to meet these standards results in immediate repossession of the doll, with the owner added to a suspension list. In severe cases, depending on the doll’s condition, criminal charges may be pursued, reflecting the institute’s rigorous oversight.&nbsp;</p>
+                  <p>&nbsp;</p>
+<p>Dolls that are not rented reside at the institute, refining their skills through daily practice or participating in public performances. They also contribute to training new aspirants, ensuring the institute’s legacy, and assist in producing or maintaining the organization’s standards.&nbsp;</p>
+<h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">&nbsp;</h3>
+<img src="images/TDIIMAGES2.jpg" width="1408" height="768" alt=""/>
+                    
+                    <p>&nbsp;</p>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Floratica</h3>
+                    
+                    <p>In 1916, Madam Marionette created The Doll Institute's first official brand, Floratica, a flora-based skincare line that enhances the dolls’ ethereal beauty and reflects Del-Ruel’s deep connection to natural enhancements.</p>
+
+                    <hr class="border-t-2 border-[#a0aec0] my-6">
+                    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+                    <ul>
+                        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('sex-culture')">Sex Culture</a></li>
+                      <li><a class="nav-link text-[#2d3748]" onClick="showArticle('defiled')">Floratica</a></li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </div>
+
+
+
+<!-- Floratica -->
+
+                <div id="floratica" class="article-content">
+                    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">Floratica: The Official Brand of The Doll Institute</h2>
+                    <img src="images/Floratica-Banner1.jpg" width="1408" height="768" alt=""/>
+                    <p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Overview</h3>
+                    <p>Floratica is the premier skincare and personal care brand affiliated with The Doll Institute, launched in 1916 by its visionary founder, Madam Marionette-Louie. Conceived as an extension of the Institute's commitment to transforming willing participants into "living Dolls" through opulent care and aesthetic perfection, Floratica specializes in luxurious soaps, shampoos, and skincare products crafted from organic flower extracts sourced from exotic locales across the world of Enla. 
+					
+					In a nation like Del-Ruel—where sexuality and creativity are intertwined, and black-market trades flourish despite international restrictions—Floratica embodies the fusion of natural beauty enhancement with the country's innovative Mana-powered technologies. These products not only pamper the skin but also align with Del-Ruelian beliefs that open sensuality unlocks greater potential, making them staples in Doll training regimens, high-end agencies, and everyday urban life in Nullus.</p>
+					
+                  <p class="mt-4">The brand's name, derived from "flora" (evoking blooming flowers) and "atica" (a nod to artistic elegance), reflects its mission: to harness the earth's floral bounty for transformative self-care. Despite Del-Ruel's isolation, Floratica's ingredients are procured through discreet networks, including underground trades facilitated by organizations like The Aristocrats. This adds an aura of exclusivity, as foreign flowers are rare commodities in a shunned nation.</p>
+
+				<h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">History </h3>
+                  <p>Floratica emerged in 1916 as Madam Marionette-Louie's response to the growing demand for specialized care products within The Doll Institute (established around 1902). [cite_start]Initially developed to maintain the flawless appearance of Dolls—whose contracts emphasize constant love, nourishment, and body modifications—the brand quickly expanded to public retail[cite: 1998]. [cite_start]By the 1920s, as seen in the bustling shopping districts of Nullus (described in tales of newcomers like Lee arriving via train), Floratica products were advertised on vibrant billboards alongside other agency brands like Jasmine & Rose.</p>
+                    <h4 class="font-bold mt-4">Key milestones:</h4>
+                    <ul class="list-disc ml-8">
+                        <li>1916: Launch with a signature Larkspur-infused soap line, tested on early Dolls for skin-softening during provocative theater performances.</li>
+                        <li>1920s: Integration of enhanced extraction processes, allowing potent floral essences without degradation.Global scrutiny arose as smuggled samples reached outsiders, fueling debates on Del-Ruel's "debaucherous" culture.</li>
+                       <li>Current Era (1923+): Floratica becomes high-class brand focusing on infusing skincare and cosmetics.</li>
+                    </ul>
+                    <p class="mt-4">Madam Marionette-Louie, inspired by her own carnival roots and the elegant dances she witnessed as a child, positioned Floratica as more than cosmetics—it's a tool for "unlocking potential," mirroring the Institute's philosophy.</p>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Key Ingredients and Sourcing</h3>
+                   <p>Floratica prides itself on organic flowers imported from diverse ENLA regions, often via black-market channels to bypass diplomatic bans. These are processed in Mana-enhanced facilities for maximum potency, ensuring extracts are gentle yet effective.</p> 
+					  
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Flower</th>
+                                <th>Origin </th>
+                                <th>Benefits in Floratica Products</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rose </td>
+                                <td>Alorerian valleys </td>
+                                <td>Antioxidants soothe irritated skin, boost collagen for youthful elasticity; anti-inflammatory for post-modification.</td>
+                            </tr>
+                            <tr>
+                                <td>Lavender</td>
+                                <td>Western Del-Ruel villages</td>
+                                <td>Moisturizing and antiseptic; promotes relaxation and healing.</td>
+                            </tr>
+                            <tr>
+                                <td>Hibiscus</td>
+                                <td>Tropical islands south of ENLA</td>
+                                <td>Anti-aging properties reduce fine lines; hydrates and brightens, enhancing the "living Doll" glow.</td>
+                            </tr>
+                            <tr>
+                                <td>Jasmine</td>
+                                <td>Eastern exotic gardens</td>
+                                <td>Calming aroma balances sebum; soothes sensitive skin, tying into sensual aromatherapy in performances.</td>
+                            </tr>
+                             <tr>
+                                <td>Chamomile</td>
+                                <td>Northern meadows (rare imports)</td>
+                                <td>Anti-inflammatory and gentle; calms redness, used in shampoos for silky hair during Rite of Passage.</td>
+                            </tr>
+                             <tr>
+                                <td>Lotus</td>
+                                <td>Asian-inspired wetlands (black-market staples)</td>
+                                <td>Purifying and hydrating; symbolizes rebirth, perfect for long-term Doll contracts.</td>
+                            </tr>
+                            <tr>
+                                <td>Edelweiss </td>
+                                <td>Mountainous highlands </td>
+                                <td>Protective against environmental damage; rare and luxurious, reserved for premium lines.</td>
+                            </tr>
+                            <tr>
+                                <td>Calendula</td>
+                                <td>Widespread fields</td>
+                                <td>Healing wounds and reducing scars; essential for body mod recovery in the Institute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>These ingredients are ethically sourced where possible, with Mana tech accelerating growth in local greenhouses to reduce reliance on risky trades.</p>
+                    
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Products </h3>
+                     <img src="images/Floraticaitems.jpg" alt="A collection of Floratica products including Lavender Dream Foam, Edelweiss Venom, and White Lotus Renewal Serum." class="w-full h-auto rounded-md mt-6 mb-6 border-2 border-[#a0aec0]">
+                    <p>Floratica offers a curated range of items, all infused with floral essences and designed for daily rituals that celebrate sensuality. Products are packaged in elegant bottles each with a different Doll name attachment for branding and marketing.</p>
+                    <ul class="list-disc ml-8 mt-4">
+                        <li><b>Soaps</b>: Bar and liquid varieties, like the Rose Petal Cleansing Bar (gentle exfoliation with embedded petals) and Lavender Dream Foam.</li>
+                        <li><b>Shampoos and Conditioners</b>: Floral Infusion Shampoo (hibiscus and jasmine for vibrant, voluminous hair) and Chamomile Silk Conditioner (soothes scalp, enhances shine for theater-ready looks).</li>
+                        <li><b>Skincare</b>: Lotus Renewal Serum (hydrates and purifies overnight), Edelweiss Protective Cream (shields against Nullus's vibrant but harsh Mana-lit environments), and Calendula Healing Balm (for post-performance recovery).</li>
+                        <li><b>Special Lines</b>: Doll Exclusive Collection (drug-enhanced formulas with White Crystal traces for euphoria during use) and Travel Kits.</li>
+                    </ul>
+                     <p class="mt-4">All products are free from harsh synthetics, aligning with Del-Ruel's natural-yet-innovative ethos.</p>
+                     <img src="images/LavendarDream.jpg" alt="A bottle of Floratica's Lavender Dream Foam." class="w-full max-w-sm mx-auto h-auto rounded-md mt-6 border-2 border-[#a0aec0]">  <img src="images/whitelotus.jpg" alt="A bottle of Floratica's White Lotus Renewal Serum." class="w-full max-w-sm mx-auto h-auto rounded-md mt-6 border-2 border-[#a0aec0]">
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Benefits and Cultural Significance </h3>
+                    <p>In Del-Ruel, where embracing sexuality fosters creativity (as in Mana power advancements), Floratica's benefits extend beyond skin-deep. Floral extracts provide hydration, anti-aging, and soothing effects, gentler than chemical alternatives—mirroring real-world inspirations like rose's collagen boost or lavender's relaxation. For Dolls, these ensure "constant care," preventing mistreatment and supporting opulent lifestyles. Culturally, they're integral to the Rite of Passage, where youth learn sensual self-care, and agency trainings, enhancing performances that gain international renown (and scrutiny). Challenges include global sourcing risks amid bans, but this exclusivity boosts appeal. In conservative outsiders' eyes (e.g., Alorerians), Floratica represents Del-Ruel's "debaucherous" allure, often smuggled as souvenirs.</p>
+                </div>
+
+
+
+
+<!-- Article Order of the Roses -->
+
+<div id="order-roses" class="article-content">
+                    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Order of the Roses</h2>
+                    <img src="images/OtRBanner1.jpg" alt="Banner for The Order of the Roses guild" class="w-full h-auto rounded-md mb-6 border-2 border-[#a0aec0]">
+                    <p class="mt-4">Established in 1774 by Mistress Folium-Lee Egbert, The Order of the Roses stands as one of the most prestigious and enigmatic guilds within the libertine tapestry of Del-Ruel, a high society dedicated to cultivating the finest fledgling Mistresses and Masters within the realm. This ancient organization traces its origins to the early days of the nation’s cultural evolution, when sensual arts began to shape its identity. Nestled in the opulent quarters of Nullus, the guild’s rose-adorned halls are a sanctuary of elegance, where the art of seduction and mastery is honed to perfection, reflecting Del-Ruel’s reverence for sexual expression as a creative and societal force.</p>
+                    <p class="mt-4">Little is publicly known about the inner workings of the Order of the Roses, shrouding it in an aura of mystique that only enhances its prestige. The guild is renowned for its rigorous training programs, which produce the most skilled and licensed Mistresses across Del-Ruel, catering to the elite patrons of theaters, guildhouses, and private estates. These Mistresses, adorned in silks infused with the scent of their signature brand, Jasmine & Rose, embody the pinnacle of sensual artistry, blending physical allure with intellectual prowess. Their services often intertwine with the use of substances like Daze, amplifying the experiences of their clients and reinforcing the guild’s influence in the nation’s cultural and economic spheres.</p>
+                    <p class="mt-4">Aspiring to the coveted role of Head Mistress requires completing the Order’s exhaustive training, a journey that tests endurance, creativity, and mastery over both body and mind[cite: 8]. However, not all who train within the guild’s walls are granted membership; the Order is notoriously selective, admitting only those who demonstrate exceptional talent, loyalty, and alignment with its secretive ethos. This exclusivity ensures that the guild remains a bastion of quality, its members serving as cultural icons who elevate Del-Ruel’s reputation even amidst the scorn of conservative nations like Vererian. The guild’s FLOW-powered training facilities, illuminated by crystalline light, symbolize its fusion of tradition with the nation’s technological vanguard.</p>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Role and Influence</h3>
+                    <p class="mt-4">The Order of the Roses plays a pivotal role in Del-Ruel’s society, bridging the gap between the libertine masses and the aristocratic elite. Its Mistresses often act as advisors and entertainers in the courts, influencing policy and morale with their refined presence. The guild’s economic clout is significant, with the Jasmine & Rose brand—featuring perfumes and oils infused with Mana-enhanced floral essences—commanding high prices in markets both local and abroad, despite trade embargoes.</p>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Challenges and Traditions</h3>
+                    <p class="mt-4">The guild faces challenges from internal rivalries and the societal risks posed by substances like Requiem, which some Mistresses use to enhance their craft, risking addiction or mutation. Tradition dictates annual rites, such as the Rose Bloom Ceremony, where new Mistresses are initiated under a canopy of Mana-lit roses, reinforcing the guild’s historical ties to Del-Ruel’s founding myths of sensual liberation.</p>
+
+                   <blockquote>"In the candlelit hall of the Order, she inhaled the heady scent of Jasmine & Rose, her final test looming. The Mana crystals pulsed as she danced, her movements a testament to years of training, securing her place among the elite Mistresses of Del-Ruel."</blockquote>
+
+                    <hr class="border-t-2 border-[#a0aec0] my-6">
+                    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+                    <ul>
+                        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('sex-culture')">Sex Culture</a></li>
+                        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('jasmine&rose')">Jasmine & Rose</a></li>
+                    </ul>
+
+                </div>
+				
+		  <div id="jasmine&rose" class="article-content">
+                    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">Jasmine & Rose: The Art of Sensual Elevation</h2>
+                    <img src="images/J&R3.png" alt="Jasmine & Rose brand logo" class="float-left w-48 mr-6 mb-2">
+                    <p class="mt-4">Established in 1811 as an exclusive luxury brand of the prestigious Order of the Roses, Jasmine &amp; Rose stands as the pinnacle of sensual artistry and technological innovation in Del-Ruel. For over a century, the brand has been synonymous with the nation's core philosophy that "sexual energy is creative energy". More than a mere collection of products, Jasmine &amp; Rose offers instruments of transcendence, blending rare,  World-renowned for its exquisite erotic care, the brand's long-term users swear by its stimulating effects.</p>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Rose's Touch: Skincare & Body Elixirs</h3>
+                    <p>The foundation of any sensual experience begins with the canvas of the skin. Jasmine & Rose products are crafted by the Order's own alchemists to prepare the body for heightened states of arousal and connection.</p>
+                    <p class="mt-4"><strong>Bloom Revitalizing Body Nectar:</strong> This shimmering, Mana-infused body oil is a staple for the licensed Mistresses of the Order. It enhances the skin's natural radiance and increases tactile sensitivity, making every touch more electric.</p>
+                    [cite_start]<p class="mt-4"><strong>Arousal Warming Massage Balm:</strong> A rich balm designed for prolonged massage. Infused with spiced rose and a mild euphoric agent derived from Purple Flower, it creates a gentle, spreading warmth that relaxes the muscles and opens the mind to new experiences.</p>
+                    <p class="mt-4"><strong>Veil of Roses Complexion Cream:</strong> A coveted secret of the Order, this cream creates a flawless, porcelain-like finish on the skin. It is said to contain essence of Whisperweave silk and crushed pearls, providing a look of ethereal beauty that subtly announces one's status.</p>
+                    
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Sacred Glide: Personal Lubricants</h3>
+                    <p>Jasmine & Rose lubricants are engineered not just for function, but for sensation. Each formula is designed to complement and enhance the body's natural responses.</p>
+                    <p class="mt-4"><strong>Silk Petal Lubricant:</strong> This best-selling lubricant uses a FLOWtech-enhanced base that subtly matches the user's body temperature, creating a seamless and intensely natural sensation. Its delicate rosewater infusion leaves a faint, alluring scent.</p>
+                    <p class="mt-4"><strong>Euphoric Glide:</strong> A closely guarded formula, this lubricant contains a synthesized Daze compound that induces a localized state of heightened pleasure and euphoria[cite: 161]. [cite_start]It is a favored tool among Del-Ruel's elite for exploring the outer limits of sensation. Edible Nectar:</strong> A collection of exquisitely flavored lubricants, allowing for a complete sensory experience. With flavors like "Candied Rose & Spice," it transforms the body into a canvas for taste as well as touch.</p>
+
+                    <img src="images/J&R2.png" alt="Jasmine & Rose products including Euphoric Glide and The Entwined Serpents">
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Artisan Instruments: Sexual Mechanisms</h3>
+            <p>In Del-Ruel, sex toys are not crude objects but "mechanisms" of intricate beauty and design. Jasmine & Rose instruments are considered the finest, merging master craftsmanship with advanced FLOWtech.</p>
+            <p class="mt-4"><strong>The Whispering Rose:</strong> Carved from polished rosewood with a Mana-crystal tip, this vibrator utilizes a FLOWtech core to emit resonant pulses rather than a simple vibration. These pulses are designed to harmonize with the body's energy, creating a deeper, more holistic climax.</p>
+                    <p class="mt-4"><strong>Faceted Jewel Dildos:</strong> Each "Jewel" is hand-carved from a single piece of Mana-receptive crystal, chosen for its beauty and energetic properties. Prized by collectors, these instruments are as much a decorative art piece as a tool for pleasure.</p>
+            <p class="mt-4"><strong>The Entwined Serpents:</strong> A flexible, programmable couples' toy designed for mutual stimulation. Its internal FLOWtech core can replicate the rhythms of famous Del-Ruelian sensual dances, allowing partners to achieve a synchronized state of ecstasy.</p>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Cultural Significance and Guild Rivalry</h3>
+                    
+                    <p>Jasmine &amp; Rose is more than a brand; it is a symbol of refined sexuality, renowned and revered by elites nationwide. In the competitive landscape of Nullus's guilds, to use Jasmine &amp; Rose is to choose artistry and mystique over the more public-facing and arguably commercialized endeavors of rivals like The Doll Institute. While other organizations, such as The Doll Institute with its own Floratica brand , may produce their own lines of skincare and accessories, none carry the same weight of history , exclusivity , and quality. The brand is a quiet declaration of one's discerning taste and association with the most elite echelons of Del-Ruelian society.</p>
+
+                    <hr class="border-t-2 border-[#a0aec0] my-6">
+                    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+                    <ul>
+                        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('order-roses')">The Order of the Roses</a></li>
+                        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('flowtech')">FLOWtech</a></li>
+                    </ul>
+					
+		
+                </div>
+
+
+
+<!-- Aloreria -->
+
+<div id="aloreria" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">Aloreria</h2>
+
+    <img src="images/mapAloreria3.png" alt="Map of Aloreria" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0]">
+    
+
+    <p class="mt-4">Aloreria is a wealthy and powerful conservative kingdom in the Great Northern Region of ENLA, located south of Vererian and across the Southern Sea from the libertine nation of Del-Ruel. While it shares a deep religious foundation with the authoritative Vererian, Alorerian society allows slightly more flexibility in daily life and is characterized by a blend of opulent status display and moral restraint under the guidance of the High Church of the Sixx. The kingdom is currently facing internal crises, including the decaying splendor of its capital and growing black-market influences that threaten its pious facade.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Governance: A Monarchy Guided by Faith</h3>
+    <p>Aloreria is ruled as a hereditary monarchy from the Royal City of Bisk. The current ruler is Greater King Elif-Laurie, whose court includes high-ranking Chancellors and the Hand of the King. The monarchy works in close partnership with the High Church of the Sixx, which serves as the kingdom’s primary spiritual advisor rather than its direct governing body (unlike in Vererian). Church doctrines heavily influence noble education, court protocols, and law, embedding strict moral codes while allowing the crown some autonomy in secular matters.</p>
+    <p class="mt-4">Recent years have seen growing tension: the royal family’s greed has led to neglect of infrastructure and rising discontent among commoners, while an unknown assassin targets the magical bloodline of the Alorerian royals. To protect his daughter, Princess Heleanna-Ivan, King Elif has reportedly begun secret dealings with the Silent Sector pirate league.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Culture and Society: Opulent Conservatism</h3>
+    <p>Alorerian society prizes piety, familial duty, and public displays of wealth tempered by the Church’s emphasis on modesty. Nobles and wealthy merchants favor luxurious yet restrained fashion — high-collared embroidered silks and gowns that display status while concealing the body. This “gilded bars” aesthetic is often viewed as frumpy or overly formal by outsiders from Del-Ruel.</p>
+    <p class="mt-4">Gender roles are clearly defined but slightly less rigid than in Vererian: men are expected to act as protectors and providers, while women focus on nurturing the family and preserving spiritual purity. Arranged marriages are common among the nobility, and vices such as open sensuality or southern narcotics are officially condemned, though black-market activity persists in certain ports.</p>
+    <p class="mt-4">Daily life revolves around Church rituals, market days, and familial obligations. In the bustling Royal Market of Bisk, respectable women like Lyra once moved through stalls of spiced breads and fine fabrics, seeking brief respite from domestic burdens — a setting where temptation from northern smugglers can quietly take root.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Notable Locations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Region</th>
+                <th>Type</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The Royal City of Bisk</td>
+                <td>Northern Aloreria</td>
+                <td>Capital City</td>
+                <td>Heart of governance, home to Castle Bisk and the Grand Church of the Sixx offices. Site of the vibrant Royal Market and growing slums due to royal neglect.</td>
+            </tr>
+            <tr>
+                <td>Port Cicilia</td>
+                <td>Northern Aloreria</td>
+                <td>Port City</td>
+                <td>Aloreria’s northernmost port, vital for controlled trade and travel to Vererian across The Sounds.</td>
+            </tr>
+            <tr>
+                <td>Concord</td>
+                <td>Northern Aloreria</td>
+                <td>Trade Hub</td>
+                <td>A busy commercial center where merchants and travelers converge.</td>
+            </tr>
+            <tr>
+                <td>Adamire</td>
+                <td>Northern Aloreria</td>
+                <td>City</td>
+                <td>A thriving intellectual center home to the Royal Academy of Wynn and the Border Patrol Academy.</td>
+            </tr>
+            <tr>
+                <td>Lacklorann</td>
+                <td>Northern Aloreria</td>
+                <td>Large Village</td>
+                <td>A prosperous settlement known for its agricultural output.</td>
+            </tr>
+            <tr>
+                <td>Port Lock</td>
+                <td>Northern Aloreria</td>
+                <td>Port</td>
+                <td>A quiet port with significant underhanded black-market activity, often used by smugglers like The Aristocrats.</td>
+            </tr>
+            <tr>
+                <td>Village of Lily</td>
+                <td>Southern Aloreria</td>
+                <td>Village</td>
+                <td>A modest southern settlement.</td>
+            </tr>
+            <tr>
+                <td>Southern Port of Ziva</td>
+                <td>Southern Aloreria</td>
+                <td>Port</td>
+                <td>Trapped within the lingering influence of The Hush for over 1,000 years; largely abandoned and hazardous.</td>
+            </tr>
+            <tr>
+                <td>Port Palmacrest</td>
+                <td>Southern Aloreria</td>
+                <td>Port City</td>
+                <td>A busy eastern port handling southern trade routes.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Noteworthy Places</h3>
+    <ul class="list-disc ml-8 mt-2">
+        <li><b>The Forbidden</b>: A cursed zone still trapped within remnants of The Hush; strictly off-limits and patrolled by Church forces.</li>
+        <li><b>Mount Raan</b>: A prominent mountain visible from Adamire, holding both strategic and spiritual significance.</li>
+        <li><b>The Wilds</b>: Untamed border regions where heretical elements and smugglers sometimes find refuge.</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Geography and Military</h3>
+    <p>Aloreria’s landscape ranges from fertile northern highlands and bustling ports to southern areas scarred by the lingering effects of The Hush. The kingdom maintains naval patrols along The Sounds and the Southern Sea, though its forces suffered a humiliating defeat when King Elif’s fleet attacked the pirate ship <i>The Arcadian</i> at Port Cicilia.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Foreign Relations</h3>
+    <p>Aloreria maintains a hostile stance toward Del-Ruel, enforcing trade embargoes and fortifying its shores against southern “corrupting” influences. Relations with Vererian are cordial but cautious, centered on shared faith. Secret dealings with the Silent Sector pirate league highlight the kingdom’s growing desperation to protect its bloodline and interests.</p>
+    
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('vererian')">Vererian</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">High Church of the Sixx</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('the-sounds')">The Sounds</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('defiled')">The Defiled</a></li>
+    </ul>
+</div>
+		
+
+
+<!-- Vererian -->
+<div id="vererian" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">Vererian</h2>
+
+    <!-- Clickable hero map – smaller & centered -->
+    <a href="images/vererianMap1.png" target="_blank" title="Click to enlarge full map">
+        <img src="images/vererianMap1.png" alt="Illustrated map of Vererian" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <p class="mt-4">Vererian is an authoritative and deeply religious nation located in the Great Northern Region of ENLA. Governed by the <b>High Church of the Sixx</b>, its culture is defined by rigid tradition, strict moral purity, and an unyielding social hierarchy. While sharing conservative foundations with its neighbor Aloreria, Vererian enforces its principles with far greater severity and authority, positioning itself as a bastion of order against the libertine influences of southern lands like Del-Ruel.</p>
+
+    <div class="image-gallery">
+        <a href="images/Vererianblank2.png" target="_blank" title="Click to enlarge full map">
+            <img src="images/Vererianblank2.png" alt="Clean line map of Vererian">
+        </a>
+        <p class="text-xs italic text-gray-500 text-center">Simplified outline of Vererian’s geography</p>
+    </div>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Governance: A Divine Theocracy</h3>
+    <p>Vererian operates as a theocracy where the High Church of the Sixx is the supreme governing authority and the de facto government. The nation’s monarchy, the House of Verathor, led by King Thorald Verathor, serves a subordinate role as the Church’s “right hand in governance.” The royal family acts as ceremonial exemplars of piety, executing policies under the direct guidance of the Church. In reality, the Church’s authority is absolute.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Culture and Society: Pious Austerity</h3>
+    <p>Vererian society is built upon strict moral codes and discipline, rooted in ancient traditions designed to prevent another divine curse like The Hush. The culture prizes absolute piety and moral purity, shunning the “sensory excesses” of heathen nations such as Del-Ruel. Vices such as brothels, gossip, smoking, and body modifications are strictly forbidden and harshly criminalized.</p>
+    <p class="mt-4">Gender roles are more rigidly defined than in Aloreria, with men as absolute protectors and women expected to embody subservience and modesty. Fashion reflects these values, focusing on piety over wealth. Women are mandated to be covered “from head to toe” in rigid, dark-colored wools and linens, with elegant veils or hoods being standard to ensure modesty. A woman’s long, well-kept hair is considered a symbol of virtue and social status.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Notable Locations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Capital City of Lavian</td><td>Capital City</td><td>The heart of Vererian’s governance, where the High Church and Monarchy reside.</td></tr>
+            <tr><td>Port Vermuth</td><td>Port City</td><td>A northern port, key for naval operations and controlled trade.</td></tr>
+            <tr><td>Port Mishii</td><td>Port City</td><td>A southern port facing The Sounds, crucial for travel toward Aloreria.</td></tr>
+            <tr><td>Port Breeze</td><td>Port City</td><td>Located on the southeastern coast, a strategic naval outpost.</td></tr>
+            <tr><td>The Great Forest</td><td>Region</td><td>A large expanse of dense forest in the northern part of the nation.</td></tr>
+            <tr><td>Aldus</td><td>City/Town</td><td>A settlement located south of the Great Forest, near Port Mishii.</td></tr>
+            <tr><td>Reddenkin</td><td>City/Town</td><td>Located in the northern plains between the Great Forest and the capital.</td></tr>
+            <tr><td>The Point</td><td>Region</td><td>The westernmost peninsula of Vererian.</td></tr>
+        </tbody>
+    </table>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Geography and Military</h3>
+    <p>Vererian’s history is centered around its fortified urban centers. The High Church of the Sixx was established in 1000 BC within Vererian’s ancient citadels, which remain important religious sites for Hush-repelling ceremonies. The nation maintains a naval presence, with patrols monitoring the Southern Sea.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Foreign Relations</h3>
+    <p>Vererian maintains a policy of staunch isolationism, viewing external influences as corrupting forces. The nation is staunchly opposed to Del-Ruelian culture, which it views as a symbol of moral decay, and all travel and trade are prohibited.</p>
+
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('high-church')">The High Church of the Sixx</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('the-sounds')">The Sounds</a></li>
+    </ul>
+</div>
+
+
+
+
+<!-- Del-Ruel -->
+
+<div id="del-ruel" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">Del-Ruel</h2>
+
+    <!-- Hero map – smaller, centered, and clickable to enlarge (just like Aloreria/Vererian) -->
+    <a href="images/delRuel102.png" target="_blank" title="Click to enlarge full map">
+        <img src="images/delRuel102.png" alt="Map of Del-Ruel" class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <p class="mt-4">Del-Ruel is the vibrant, libertine nation of the south, a land where creativity, sensuality, and technological innovation are celebrated as one and the same. Ruled by the Rinaldi Monarchy from the glittering Grand City of Nullus, Del-Ruel stands in stark contrast to the rigid piety of the northern kingdoms. Here, Mana and its advanced successor FLOWtech power everything from grand theaters to intimate guildhouses, and the pursuit of personal freedom is seen as the highest form of harmony with the universe.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Governance: The Rinaldi Monarchy</h3>
+    <p>Del-Ruel is ruled by King Finnas Alberto Rinaldi from the opulent capital of Nullus. The monarchy works in close partnership with powerful guilds such as the Order of the Roses and the Doll Institute, allowing a balance between royal authority and cultural innovation. While the north views this system as chaotic, Del-Ruelians see it as the natural expression of freedom and creativity.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Culture and Society: Libertine Harmony</h3>
+    <p>Del-Ruel celebrates personal expression, sensuality, and artistic mastery. The Third Gender (Veilborn) is revered, and many citizens openly embrace the philosophy that sexual and creative energy are inseparable. Fashion is bold and flowing, often enhanced by ManaTech and Floratica elixirs. The nation’s guilds and theaters are the heart of society, where Mistresses, Dolls, and artists push the boundaries of innovation and pleasure.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Notable Locations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The Grand City of Nullus</td>
+                <td>Capital City</td>
+                <td>The glittering heart of Del-Ruel, home to the monarchy, grand theaters, and the most powerful guilds.</td>
+            </tr>
+            <tr>
+                <td>Port Amber</td>
+                <td>Major Port</td>
+                <td>The primary southern port, bustling with trade, smugglers, and FLOWtech-powered ships.</td>
+            </tr>
+            <tr>
+                <td>Obsidian Reach</td>
+                <td>Mining Town</td>
+                <td>Far eastern mining settlement famous for harvesting black crystal, a key component in advanced ManaTech.</td>
+            </tr>
+            <tr>
+                <td>Luminar</td>
+                <td>Mining Village</td>
+                <td>North-western village known for white crystal extraction, used in everything from medicine to euphoric elixirs.</td>
+            </tr>
+            <tr>
+                <td>Verdalia</td>
+                <td>Farming Village</td>
+                <td>South-western agricultural community supplying exotic flowers for Floratica and other luxury brands.</td>
+            </tr>
+            <tr>
+                <td>Goldenfields</td>
+                <td>Farming Village</td>
+                <td>Central farming region known for fertile lands and Mana-infused crops.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Geography and Innovation</h3>
+    <p>Del-Ruel’s warm southern climate and abundant Mana sources have allowed it to become the technological leader of Enla. From the bustling docks of Port Amber to the crystal mines of Obsidian Reach and Luminar, the nation harnesses natural resources to fuel FLOWtech advancements that power its libertine lifestyle.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Foreign Relations</h3>
+    <p>Del-Ruel maintains a policy of open trade and cultural exchange, though it faces heavy embargoes and hostility from the northern kingdoms of Aloreria and Vererian. Smugglers and organizations like The Aristocrats frequently move goods (and people) across The Sounds, keeping the black-market economy thriving despite northern restrictions.</p>
+
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('vererian')">Vererian</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('the-sounds')">The Sounds</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('doll-institute')">The Doll Institute</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('order-roses')">The Order of the Roses</a></li>
+    </ul>
+</div>
+
+
+
+<!-- The Arcadian -->
+<div id="the-arcadian" class="article-content">
+    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">The Arcadian</h2>
+
+    <!-- Hero Image (replace filename when you have the artwork) -->
+    <a href="images/ArcadianDrawn.png" target="_blank" title="Click to enlarge full image">
+        <img src="images/ArcadianDrawn.png" alt="The Arcadian – the mountain-like flagship of the Silent Sector slicing through stormy seas" 
+             class="w-1/2 mx-auto h-auto rounded-md mb-6 border-2 border-[#a0aec0] cursor-zoom-in">
+    </a>
+
+    <p class="mt-4">The <b>Arcadian</b> stands as the crowning jewel and primary warship of the infamous <b>Silent Sector</b>, a pirate league shrouded in legend and dread across the seas of Enla. This world-renowned vessel is a colossus of the waves — a behemoth as vast as a towering mountain, defying the very laws of gravity itself. Its hull, forged from the darkest enchanted oak and reinforced with rune-etched iron, looms like a floating fortress, so immense that scholars and naval engineers across the continent remain utterly stumped as to how such a leviathan stays afloat.</p>
+
+    <div class="image-gallery">
+        <img src="images/theArcadian1.png" alt="The Arcadian’s colossal sails emblazoned with the star-and-wave emblem">
+        <p class="text-xs italic text-gray-500 text-center">The star-and-wave emblem of the Silent Sector fluttering defiantly under the sunset</p>
+    </div>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">A Ship That Defies Reason</h3>
+    <p>Stretching across the horizon like a living mountain, the <b>Arcadian</b> glides effortlessly through the treacherous currents of <b>The Sounds</b> and the open Southern Sea. No conventional engineering can explain its buoyancy. Some whisper of ancient celestial magic woven into every plank; others claim the sea itself bows to the will of its captain. Whatever the truth, the vessel’s presence alone has caused entire fleets to turn tail before a single cannon is fired.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Armament and Might</h3>
+    <p>Its decks bristle with unmatched artillery — cannons that roar like thunder, capable of reducing entire armadas to splinters in moments. The sails, emblazoned with the star-and-wave emblem of the Silent Sector, cut through gales that would shred lesser vessels. To the conservative kingdoms of the north, the <b>Arcadian</b> is not merely a ship; it is a floating symbol of defiance against the rigid order of the <b>High Church of the Sixx</b>.</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">The Captain: High Captain Nebulia Higgsloyth</h3>
+    <p>Commanding the <b>Arcadian</b> is the ruthless leader of the Silent Sector herself — <b>High Captain Nebulia Higgsloyth</b>, known across Enla as the <b>Queen of the Seas</b>. A celestial sea elf of ethereal beauty and terrifying presence, Nebulia moves as though she carries the ocean within her. Her hair is the color of the darkest depths, and she smells perpetually of salt and crashing waves. Her cloak billows and crashes like breaking surf even on windless days. In Aloreria her name alone is worth its weight in gold; she is wanted on the highest warrant — dead or alive, in one piece or many.</p>
+
+    <blockquote>“Her cloak nearly crashed when it whipped through the wind. She carried the sea with her as she walked — an ethereal being.”</blockquote>
+    <p class="text-xs italic text-gray-500 mt-2">— Survivor of the Battle of Port Cicilia</p>
+
+    <h3 class="text-2xl font-semibold mt-6 mb-2 text-[#2d3748]">Notable History & The Port Cicilia Disaster</h3>
+    <p>Five years ago, Greater King Elif-Laurie of <b>Aloreria</b> launched a full naval assault on the <b>Arcadian</b> while it lay at anchor near <b>Port Cicilia</b>. The attack ended in catastrophe: over half the Royal Alorerian fleet was sunk or scattered, and the survivors returned to Bisk in disgrace. The defeat cemented the Silent Sector’s reputation and forced Aloreria to ban all Silent Sector vessels from northern ports under threat of immediate destruction.</p>
+
+    <p>Since then, the <b>Arcadian</b> has become the backbone of the black-market routes that smuggle goods, people, and forbidden substances between the conservative north and libertine <b>Del-Ruel</b>, often operating in the hidden coves of <b>The Sounds</b>.</p>
+
+    <hr class="border-t-2 border-[#a0aec0] my-6">
+    <h4 class="font-bold text-[#2d3748]">See Also:</h4>
+    <ul>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('aloreria')">Aloreria</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('the-sounds')">The Sounds</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('del-ruel')">Del-Ruel</a></li>
+        <li><a class="nav-link text-[#2d3748]" onclick="showArticle('silent-sea')">The Silent Sea</a></li>
+    </ul>
+</div>
+
+
+
+<!-- History Timeline Begins -->
+
+                <div id="history-timeline" class="article-content">
+                    <h2 class="text-3xl font-bold mb-4 text-[#2d3748]">History of Del-Ruel</h2>
+                    <p class="text-lg mb-6">A timeline of key events in the history of Del-Ruel and the world of ENLA.</p>
+
+                    <div class="relative border-l-2 border-[#a0aec0] pl-8">
+                        
+                        <div class="mb-10">
+                            <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-[#2d3748] rounded-full border-4 border-[#f7fafc]"></div>
+                            <h3 class="text-xl font-semibold text-[#2d3748]">987 - 999 AC: Calamity: The Hush</h3>
+                            <p class="mt-1 text-sm text-gray-500">Major Event / Disaster</p>
+                            <p class="mt-2">An eternal silence unleashed upon ENLA by the Gods as a curse for humanity's lost faith and arrogance. As civilizations advanced, they mocked the Gods and destroyed temples. In response, the Gods unleashed a dense fog, The Hush, which crept through cities, engulfing everything in its path in complete stillness.</p>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-[#2d3748] rounded-full border-4 border-[#f7fafc]"></div>
+                            <h3 class="text-xl font-semibold text-[#2d3748]">1083 AC: Birth of Finnas Alberto Rinaldi</h3>
+                            <p class="mt-1 text-sm text-gray-500">Milestone / Life</p>
+                            <p class="mt-2">The birth year of the future reigning king, Finnas Alberto Rinaldi.</p>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-[#2d3748] rounded-full border-4 border-[#f7fafc]"></div>
+                            <h3 class="text-xl font-semibold text-[#2d3748]">1123 AC: The Rinaldi Monarchy</h3>
+                            <p class="mt-1 text-sm text-gray-500">Important Event / Construction</p>
+                            <p class="mt-2">The year the Rinaldi Monarchy came into power in Del-Ruel.</p>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-[#2d3748] rounded-full border-4 border-[#f7fafc]"></div>
+                            <h3 class="text-xl font-semibold text-[#2d3748]">1876 AC: The Founding of the Velvet Veil Society</h3>
+                            <p class="mt-1 text-sm text-gray-500">Minor Event / Artistic Creation</p>
+                            <p class="mt-2">The exotic material Whisperweave was discovered, and the Velvet Veil Society was created by designer Elara Von Voss.</p>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-[#2d3748] rounded-full border-4 border-[#f7fafc]"></div>
+                            <h3 class="text-xl font-semibold text-[#2d3748]">1902 AC: The Doll Institute</h3>
+                            <p class="mt-1 text-sm text-gray-500">Important Event / Artistic Creation</p>
+                            <p class="mt-2">Madam Marionette-Louie establishes The Doll Institute, the first organization of its kind within Del-Ruel, changing society with the introduction of living dolls.</p>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-[#2d3748] rounded-full border-4 border-[#f7fafc]"></div>
+                            <h3 class="text-xl font-semibold text-[#2d3748]">1916 AC: Floratica is Branded</h3>
+                            <p class="mt-1 text-sm text-gray-500">Minor Event / Artistic Creation</p>
+                            <p class="mt-2">Madam Marionette creates The Doll Institute's official first brand, Floratica, a flora-based skin care line.</p>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-[#a0aec0] rounded-full border-4 border-[#f7fafc]"></div>
+                            <h3 class="text-xl font-semibold text-[#2d3748]">1923 AC: Era of the "Side Story The Doll Institute"</h3>
+                            <p class="mt-1 text-sm text-gray-500">Era Start</p>
+                            <p class="mt-2">This era marks the setting for the side story featuring the dolls Lee and Nora.</p>
+                        </div>
+
+                  
+  
+    </main>
+    <footer class="py-4 text-center bg-[#2d3748] text-[#f7fafc] gothic-border-new">
+        <p>Del-Ruel © 2025. Journey into the forbidden.</p>
+    </footer>
+<script>
+        function showArticle(articleId) {
+            const articles = document.querySelectorAll('.article-content');
+            articles.forEach(article => {
+                article.classList.remove('active');
+            });
+            
+            // Show the requested article or fall back to welcome
+            let articleToShow = document.getElementById(articleId) || document.getElementById('welcome');
+            if (articleToShow) {
+                articleToShow.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
